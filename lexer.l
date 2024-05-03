@@ -3,6 +3,9 @@
 extern int yylineno;
 %}
 
+%option noyywrap
+%x COMMENT
+
 %%
 
 "if"                    { return IF; }
@@ -54,13 +57,13 @@ extern int yylineno;
 ">"                     { return GT_OP; }
 "<"                     { return LT_OP; }
 
-"&&"                    { return AND_OP; }
-"||"                    { return OR_OP; }
+"&&"                    { return OP_AND; }
+"||"                    { return OP_OR; }
 "!"                     { return NOT_OP; }
 
 "//".*                  { /* ignore single line comment */ }
 "/*"                    { BEGIN(COMMENT); }
-"*/"                    { BEGIN(INITIAL); }
+<COMMENT>"*/"           { BEGIN(INITIAL); }
 <COMMENT>.              { /* ignore content within comments */ }
 <COMMENT>\n             { /* ignore newlines in comments */ }
 

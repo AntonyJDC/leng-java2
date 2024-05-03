@@ -1,7 +1,7 @@
 %{
 #include <stdio.h>
 extern int yylineno;
-
+extern int yylex(void);
 int yyerror(char *s) {
     fprintf(stderr, "Prueba con el archivo de entrada\nError sintáctico en línea número: %d\n", yylineno);
     return 0;
@@ -13,12 +13,21 @@ int yyerror(char *s) {
 %token INC_OP DEC_OP ADD_ASSIGN SUB_ASSIGN MUL_ASSIGN DIV_ASSIGN
 %token L_BRACE R_BRACE SEMICOLON L_PAREN R_PAREN L_BRACKET R_BRACKET
 %token INTEGER_CONST DOUBLE_CONST STRING_LITERAL IDENTIFIER
-%token EQ_OP LE_OP GE_OP NE_OP GT_OP LT_OP AND_OP OR_OP NOT_OP
+%token EQ_OP LE_OP GE_OP NE_OP GT_OP LT_OP OP_AND OP_OR NOT_OP
 
 %%
 program:
       program statement
     | statement
+    ;
+
+compound_statement:
+      L_BRACE statements R_BRACE
+    ;
+
+statements:
+      statement
+    | statements statement
     ;
 
 statement:
@@ -29,7 +38,7 @@ statement:
 
 declaration_statement:
       type_specifier IDENTIFIER SEMICOLON
-    | type_specifier IDENTIFIER ASSIGN expression SEMICOLON
+    | type_specifier IDENTIFIER OP_ASIGN expression SEMICOLON
     ;
 
 type_specifier:
