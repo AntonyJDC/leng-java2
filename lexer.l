@@ -45,7 +45,7 @@ extern int yylineno;
 "]"                     { return R_BRACKET; }
 
 [0-9]+                  { return INTEGER_CONST; }
-[0-9]+"."[0-9]*         { return DOUBLE_CONST; }
+[0-9]+"."[0-9]*([eE][-+]?[0-9]+)?         { return DOUBLE_CONST; }
 \"[^"\n]*\"             { return STRING_LITERAL; }
 
 [a-zA-Z_][a-zA-Z0-9_]*  { return IDENTIFIER; }

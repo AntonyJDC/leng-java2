@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+#ifndef YY_YY_PARSER_TAB_H_INCLUDED
+# define YY_YY_PARSER_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -105,59 +105,6 @@ extern int yydebug;
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
-/* Token kinds.  */
-#define YYEMPTY -2
-#define YYEOF 0
-#define YYerror 256
-#define YYUNDEF 257
-#define IF 258
-#define ELSE 259
-#define FOR 260
-#define WHILE 261
-#define DOUBLE 262
-#define INT 263
-#define STRING 264
-#define CHAR 265
-#define NEW 266
-#define PUBLIC 267
-#define CLASS 268
-#define STATIC 269
-#define VOID 270
-#define OP_SUM 271
-#define OP_SUST 272
-#define OP_MULT 273
-#define OP_DIV 274
-#define OP_ASIGN 275
-#define OP_MOD 276
-#define INC_OP 277
-#define DEC_OP 278
-#define ADD_ASSIGN 279
-#define SUB_ASSIGN 280
-#define MUL_ASSIGN 281
-#define DIV_ASSIGN 282
-#define L_BRACE 283
-#define R_BRACE 284
-#define SEMICOLON 285
-#define L_PAREN 286
-#define R_PAREN 287
-#define L_BRACKET 288
-#define R_BRACKET 289
-#define COMMA 290
-#define INTEGER_CONST 291
-#define DOUBLE_CONST 292
-#define STRING_LITERAL 293
-#define IDENTIFIER 294
-#define EQ_OP 295
-#define LE_OP 296
-#define GE_OP 297
-#define NE_OP 298
-#define GT_OP 299
-#define LT_OP 300
-#define OP_AND 301
-#define OP_OR 302
-#define NOT_OP 303
-#define ASSIGN 304
-#define IFX 305
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -173,4 +120,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+#endif /* !YY_YY_PARSER_TAB_H_INCLUDED  */

@@ -15,18 +15,126 @@ int yyerror(char *s) {
 %token INTEGER_CONST DOUBLE_CONST STRING_LITERAL IDENTIFIER
 %token EQ_OP LE_OP GE_OP NE_OP GT_OP LT_OP OP_AND OP_OR NOT_OP
 
+%left '+' '-'
+%left '*' '/'
+%right ASSIGN
+%nonassoc IFX
+%nonassoc ELSE
+
 %%
 program:
+    class_definitions
+    ;
+
+class_definitions:
     class_definition
+    | class_definitions class_definition
     ;
 
 class_definition:
-    PUBLIC CLASS IDENTIFIER L_BRACE class_body R_BRACE
+    PUBLIC CLASS IDENTIFIER L_BRACE method_definitions R_BRACE
     ;
 
-class_body:
-    
+method_definitions:
+
+    | nonempty_method_definitions
     ;
+
+nonempty_method_definitions:
+    method_definition
+    | nonempty_method_definitions method_definition
+    ;
+
+method_definition:
+    method_header compound_statement
+    ;
+
+method_header:
+    PUBLIC STATIC type IDENTIFIER L_PAREN parameters R_PAREN
+    ;
+
+parameters:
+
+    | STRING L_BRACKET R_BRACKET IDENTIFIER
+    ;
+
+type:
+
+    | VOID
+    | INT
+    | DOUBLE
+    | CHAR
+    | STRING
+    ;
+
+compound_statement:
+    L_BRACE statements R_BRACE
+    ;
+
+statements:
+    | statements statement
+    ;
+
+statement:
+      expression_statement
+    | declaration_statement
+    | compound_statement
+    | if_statement
+    | while_statement
+    | for_statement
+    ;
+
+expression_statement:
+    expression SEMICOLON
+    ;
+
+declaration_statement:
+    type IDENTIFIER SEMICOLON
+    | type IDENTIFIER OP_ASIGN expression SEMICOLON
+    ;
+
+expression:
+      INTEGER_CONST
+    | DOUBLE_CONST
+    | STRING_LITERAL
+    | IDENTIFIER
+    | expression OP_SUM expression
+    | expression OP_SUST expression
+    | expression OP_MULT expression
+    | expression OP_DIV expression
+    | IDENTIFIER OP_ASIGN expression
+    | expression OP_MOD expression
+    | expression INC_OP
+    | expression DEC_OP
+    | expression ADD_ASSIGN expression
+    | expression SUB_ASSIGN expression
+    | expression MUL_ASSIGN expression
+    | expression DIV_ASSIGN expression
+    | expression EQ_OP expression
+    | expression LE_OP expression
+    | expression GE_OP expression
+    | expression NE_OP expression
+    | expression GT_OP expression
+    | expression LT_OP expression
+    | expression OP_AND expression
+    | expression OP_OR expression
+    | NOT_OP expression
+    | L_PAREN expression R_PAREN
+    ;
+
+if_statement:
+    IF L_PAREN expression R_PAREN statement
+    | IF L_PAREN expression R_PAREN statement ELSE statement
+    ;
+
+while_statement:
+    WHILE L_PAREN expression R_PAREN statement
+    ;
+
+for_statement:
+    FOR L_PAREN type expression SEMICOLON expression SEMICOLON expression R_PAREN compound_statement
+    ;
+
 %%
 
 int main(void) {
