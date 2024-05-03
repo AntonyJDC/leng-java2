@@ -2,9 +2,10 @@
 #include <stdio.h>
 extern int yylineno;
 extern int yylex(void);
-int yyerror(char *s) {
-    fprintf(stderr, "Prueba con el archivo de entrada\nError sintáctico en línea número: %d\n", yylineno);
-    return 0;
+int error_count = 0;
+int yyerror(const char *s) {
+    fprintf(stderr, "Error sintáctico en línea número: %d\n", yylineno);
+    error_count++;
 }
 %}
 
@@ -76,7 +77,8 @@ statements:
     ;
 
 statement:
-      expression_statement
+    error SEMICOLON { yyerrok; }
+    | expression_statement
     | declaration_statement
     | compound_statement
     | if_statement
@@ -91,6 +93,7 @@ expression_statement:
 declaration_statement:
     type IDENTIFIER SEMICOLON
     | type IDENTIFIER OP_ASIGN expression SEMICOLON
+    | type IDENTIFIER COMMA IDENTIFIER SEMICOLON
     ;
 
 expression:
@@ -138,8 +141,9 @@ for_statement:
 %%
 
 int main(void) {
-    if (yyparse() == 0) {
-        printf("Prueba con el archivo de entrada\nBien.\n");
+    printf("Prueba con el archivo de entrada\n");
+    if (yyparse() == 0 && error_count == 0) {
+        printf("Bien.\n");
     }
     return 0;
 }
