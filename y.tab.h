@@ -100,8 +100,8 @@ extern int yydebug;
     OP_AND = 301,                  /* OP_AND  */
     OP_OR = 302,                   /* OP_OR  */
     NOT_OP = 303,                  /* NOT_OP  */
-    ASSIGN = 304,                  /* ASSIGN  */
-    IFX = 305                      /* IFX  */
+    MOD_ASSIGN = 304,              /* MOD_ASSIGN  */
+    LOWER_THAN_ELSE = 305          /* LOWER_THAN_ELSE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -156,8 +156,8 @@ extern int yydebug;
 #define OP_AND 301
 #define OP_OR 302
 #define NOT_OP 303
-#define ASSIGN 304
-#define IFX 305
+#define MOD_ASSIGN 304
+#define LOWER_THAN_ELSE 305
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

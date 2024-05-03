@@ -100,8 +100,8 @@ extern int yydebug;
     OP_AND = 301,                  /* OP_AND  */
     OP_OR = 302,                   /* OP_OR  */
     NOT_OP = 303,                  /* NOT_OP  */
-    ASSIGN = 304,                  /* ASSIGN  */
-    IFX = 305                      /* IFX  */
+    MOD_ASSIGN = 304,              /* MOD_ASSIGN  */
+    LOWER_THAN_ELSE = 305          /* LOWER_THAN_ELSE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

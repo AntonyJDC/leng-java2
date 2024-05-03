@@ -3,6 +3,7 @@
 extern int yylineno;
 extern int yylex(void);
 int error_count = 0;
+
 int yyerror(const char *s) {
     fprintf(stderr, "Error sintáctico en línea número: %d\n", yylineno);
     error_count++;
@@ -16,10 +17,13 @@ int yyerror(const char *s) {
 %token INTEGER_CONST DOUBLE_CONST STRING_LITERAL IDENTIFIER
 %token EQ_OP LE_OP GE_OP NE_OP GT_OP LT_OP OP_AND OP_OR NOT_OP
 
-%left '+' '-'
-%left '*' '/'
-%right ASSIGN
-%nonassoc IFX
+%right OP_ASIGN ADD_ASSIGN SUB_ASSIGN MUL_ASSIGN DIV_ASSIGN MOD_ASSIGN
+%left OP_OR OP_AND
+%left EQ_OP NE_OP LT_OP LE_OP GT_OP GE_OP
+%left OP_SUM OP_SUST
+%left OP_MULT OP_DIV OP_MOD
+%right NOT_OP INC_OP DEC_OP
+%nonassoc LOWER_THAN_ELSE
 %nonassoc ELSE
 
 %%
@@ -37,7 +41,6 @@ class_definition:
     ;
 
 method_definitions:
-
     | nonempty_method_definitions
     ;
 
@@ -55,13 +58,11 @@ method_header:
     ;
 
 parameters:
-
     | STRING L_BRACKET R_BRACKET IDENTIFIER
     ;
 
 type:
-
-    | VOID
+    VOID
     | INT
     | DOUBLE
     | CHAR
@@ -97,7 +98,7 @@ declaration_statement:
     ;
 
 expression:
-      INTEGER_CONST
+    INTEGER_CONST
     | DOUBLE_CONST
     | STRING_LITERAL
     | IDENTIFIER
@@ -121,21 +122,26 @@ expression:
     | expression LT_OP expression
     | expression OP_AND expression
     | expression OP_OR expression
-    | NOT_OP expression
-    | L_PAREN expression R_PAREN
+    | NOT_OP expression %prec NOT_OP
+    | L_PAREN expression R_PAREN %prec L_PAREN
     ;
 
 if_statement:
-    IF L_PAREN expression R_PAREN statement
+    IF L_PAREN expression R_PAREN statement %prec LOWER_THAN_ELSE
     | IF L_PAREN expression R_PAREN statement ELSE statement
     ;
-
+    
 while_statement:
     WHILE L_PAREN expression R_PAREN statement
     ;
 
 for_statement:
-    FOR L_PAREN type expression SEMICOLON expression SEMICOLON expression R_PAREN compound_statement
+    FOR L_PAREN for_init SEMICOLON expression SEMICOLON expression R_PAREN compound_statement
+    ;
+
+for_init:
+    type IDENTIFIER OP_ASIGN expression
+    | IDENTIFIER OP_ASIGN expression
     ;
 
 %%
