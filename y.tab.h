@@ -86,19 +86,20 @@ extern int yydebug;
     R_PAREN = 287,                 /* R_PAREN  */
     L_BRACKET = 288,               /* L_BRACKET  */
     R_BRACKET = 289,               /* R_BRACKET  */
-    INTEGER_CONST = 290,           /* INTEGER_CONST  */
-    DOUBLE_CONST = 291,            /* DOUBLE_CONST  */
-    STRING_LITERAL = 292,          /* STRING_LITERAL  */
-    IDENTIFIER = 293,              /* IDENTIFIER  */
-    EQ_OP = 294,                   /* EQ_OP  */
-    LE_OP = 295,                   /* LE_OP  */
-    GE_OP = 296,                   /* GE_OP  */
-    NE_OP = 297,                   /* NE_OP  */
-    GT_OP = 298,                   /* GT_OP  */
-    LT_OP = 299,                   /* LT_OP  */
-    OP_AND = 300,                  /* OP_AND  */
-    OP_OR = 301,                   /* OP_OR  */
-    NOT_OP = 302                   /* NOT_OP  */
+    COMMA = 290,                   /* COMMA  */
+    INTEGER_CONST = 291,           /* INTEGER_CONST  */
+    DOUBLE_CONST = 292,            /* DOUBLE_CONST  */
+    STRING_LITERAL = 293,          /* STRING_LITERAL  */
+    IDENTIFIER = 294,              /* IDENTIFIER  */
+    EQ_OP = 295,                   /* EQ_OP  */
+    LE_OP = 296,                   /* LE_OP  */
+    GE_OP = 297,                   /* GE_OP  */
+    NE_OP = 298,                   /* NE_OP  */
+    GT_OP = 299,                   /* GT_OP  */
+    LT_OP = 300,                   /* LT_OP  */
+    OP_AND = 301,                  /* OP_AND  */
+    OP_OR = 302,                   /* OP_OR  */
+    NOT_OP = 303                   /* NOT_OP  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -139,19 +140,20 @@ extern int yydebug;
 #define R_PAREN 287
 #define L_BRACKET 288
 #define R_BRACKET 289
-#define INTEGER_CONST 290
-#define DOUBLE_CONST 291
-#define STRING_LITERAL 292
-#define IDENTIFIER 293
-#define EQ_OP 294
-#define LE_OP 295
-#define GE_OP 296
-#define NE_OP 297
-#define GT_OP 298
-#define LT_OP 299
-#define OP_AND 300
-#define OP_OR 301
-#define NOT_OP 302
+#define COMMA 290
+#define INTEGER_CONST 291
+#define DOUBLE_CONST 292
+#define STRING_LITERAL 293
+#define IDENTIFIER 294
+#define EQ_OP 295
+#define LE_OP 296
+#define GE_OP 297
+#define NE_OP 298
+#define GT_OP 299
+#define LT_OP 300
+#define OP_AND 301
+#define OP_OR 302
+#define NOT_OP 303
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

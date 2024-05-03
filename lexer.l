@@ -17,10 +17,10 @@ extern int yylineno;
 "String"                { return STRING; }
 "char"                  { return CHAR; }
 "new"                   { return NEW; }
-"public"                  { return PUBLIC; }
-"class"                  { return CLASS; }
-"static"                  { return STATIC; }
-"void"                    { return VOID; }
+"public"                { return PUBLIC; }
+"class"                 { return CLASS; }
+"static"                { return STATIC; }
+"void"                  { return VOID; }
 
 "+"                     { return OP_SUM; }
 "-"                     { return OP_SUST; }
@@ -38,6 +38,7 @@ extern int yylineno;
 "{"                     { return L_BRACE; }
 "}"                     { return R_BRACE; }
 ";"                     { return SEMICOLON; }
+","                     { return COMMA; }
 "("                     { return L_PAREN; }
 ")"                     { return R_PAREN; }
 "["                     { return L_BRACKET; }
