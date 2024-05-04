@@ -1,6 +1,7 @@
 %{
-#include "parser.tab.h"
+#include "y.tab.h"
 extern int yylineno;
+void start_comment();
 %}
 
 %option noyywrap
@@ -65,5 +66,23 @@ extern int yylineno;
 "||"                    { return OP_OR; }
 "!"                     { return NOT_OP; }
 
+
+"//"[^\n]*              ;  // Ignora los comentarios de una sola línea
+
+"/*"                    { start_comment(); }
+
 .                       ;
 %%
+
+void start_comment() {
+    int c;
+
+    while ((c = input()) != 0) {
+        if (c == '*') {
+            if ((c = input()) == '/') {
+                break;  // Termina el comentario si encuentra */
+            }
+            unput(c);  // Vuelve a poner el carácter si no es /
+        }
+    }
+}
