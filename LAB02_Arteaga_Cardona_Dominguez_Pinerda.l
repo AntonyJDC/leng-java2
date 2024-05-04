@@ -1,5 +1,5 @@
 %{
-#include "y.tab.h"
+#include "LAB02_Arteaga_Cardona_Dominguez_Pinerda.tab.h"
 extern int yylineno;
 void start_comment();
 %}

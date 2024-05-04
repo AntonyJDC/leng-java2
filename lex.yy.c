@@ -517,9 +517,9 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lexer.l"
-#line 2 "lexer.l"
-#include "y.tab.h"
+#line 1 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
+#line 2 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
+#include "LAB02_Arteaga_Cardona_Dominguez_Pinerda.tab.h"
 extern int yylineno;
 void start_comment();
 #line 526 "lex.yy.c"
@@ -742,7 +742,7 @@ YY_DECL
 		}
 
 	{
-#line 10 "lexer.l"
+#line 10 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 
 
 #line 749 "lex.yy.c"
@@ -804,268 +804,268 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 12 "lexer.l"
+#line 12 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 ;
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 13 "lexer.l"
+#line 13 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { yylineno++; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 15 "lexer.l"
+#line 15 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return IF; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 16 "lexer.l"
+#line 16 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return ELSE; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 17 "lexer.l"
+#line 17 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return FOR; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 18 "lexer.l"
+#line 18 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return WHILE; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 19 "lexer.l"
+#line 19 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return DOUBLE; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 20 "lexer.l"
+#line 20 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return INT; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 21 "lexer.l"
+#line 21 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return STRING; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 22 "lexer.l"
+#line 22 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return CHAR; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 23 "lexer.l"
+#line 23 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return NEW; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 24 "lexer.l"
+#line 24 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return PUBLIC; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 25 "lexer.l"
+#line 25 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return CLASS; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 26 "lexer.l"
+#line 26 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return STATIC; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 27 "lexer.l"
+#line 27 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return VOID; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 29 "lexer.l"
+#line 29 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_SUM; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 30 "lexer.l"
+#line 30 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_SUST; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 31 "lexer.l"
+#line 31 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_MULT; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "lexer.l"
+#line 32 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_DIV; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 33 "lexer.l"
+#line 33 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_ASIGN; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 34 "lexer.l"
+#line 34 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_MOD; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 35 "lexer.l"
+#line 35 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return INC_OP; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 36 "lexer.l"
+#line 36 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return DEC_OP; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 37 "lexer.l"
+#line 37 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return ADD_ASSIGN; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 38 "lexer.l"
+#line 38 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return SUB_ASSIGN; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 39 "lexer.l"
+#line 39 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return MUL_ASSIGN; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 40 "lexer.l"
+#line 40 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return DIV_ASSIGN; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 42 "lexer.l"
+#line 42 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return L_BRACE; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 43 "lexer.l"
+#line 43 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return R_BRACE; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 44 "lexer.l"
+#line 44 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return SEMICOLON; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 45 "lexer.l"
+#line 45 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return COMMA; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 46 "lexer.l"
+#line 46 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return L_PAREN; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 47 "lexer.l"
+#line 47 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return R_PAREN; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 48 "lexer.l"
+#line 48 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return L_BRACKET; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 49 "lexer.l"
+#line 49 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return R_BRACKET; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 51 "lexer.l"
+#line 51 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return INTEGER_CONST; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 52 "lexer.l"
+#line 52 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return DOUBLE_CONST; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 53 "lexer.l"
+#line 53 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return STRING_LITERAL; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 55 "lexer.l"
+#line 55 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return IDENTIFIER; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 57 "lexer.l"
+#line 57 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return EQ_OP; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 58 "lexer.l"
+#line 58 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return LE_OP; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 59 "lexer.l"
+#line 59 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return GE_OP; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 60 "lexer.l"
+#line 60 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return NE_OP; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 61 "lexer.l"
+#line 61 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return NE_OP; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 62 "lexer.l"
+#line 62 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return GT_OP; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 63 "lexer.l"
+#line 63 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return LT_OP; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 65 "lexer.l"
+#line 65 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_AND; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 66 "lexer.l"
+#line 66 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return OP_OR; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 67 "lexer.l"
+#line 67 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { return NOT_OP; }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 70 "lexer.l"
+#line 70 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 ;  // Ignora los comentarios de una sola línea
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 72 "lexer.l"
+#line 72 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 { start_comment(); }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 74 "lexer.l"
+#line 74 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 ;
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 75 "lexer.l"
+#line 75 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 ECHO;
 	YY_BREAK
 #line 1072 "lex.yy.c"
@@ -2074,7 +2074,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 75 "lexer.l"
+#line 75 "LAB02_Arteaga_Cardona_Dominguez_Pinerda.l"
 
 
 void start_comment() {
