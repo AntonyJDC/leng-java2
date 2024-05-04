@@ -1,5 +1,5 @@
 %{
-#include "y.tab.h"
+#include "parser.tab.h"
 extern int yylineno;
 %}
 
@@ -7,6 +7,9 @@ extern int yylineno;
 %x COMMENT
 
 %%
+
+[ \t]+                  ;
+\n                      { yylineno++; }
 
 "if"                    { return IF; }
 "else"                  { return ELSE; }
@@ -62,11 +65,5 @@ extern int yylineno;
 "||"                    { return OP_OR; }
 "!"                     { return NOT_OP; }
 
-"//".*                  { /* ignore single line comment */ }
-"/*"                    { BEGIN(COMMENT); }
-<COMMENT>"*/"           { BEGIN(INITIAL); }
-<COMMENT>.              { /* ignore content within comments */ }
-<COMMENT>\n             { /* ignore newlines in comments */ }
-
-\n                      { yylineno++; }
+.                       ;
 %%

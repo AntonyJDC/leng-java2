@@ -1,12 +1,16 @@
 %{
 #include <stdio.h>
-extern int yylineno;
-extern int yylex(void);
-int error_count = 0;
+#include <stdlib.h>
 
-int yyerror(const char *s) {
-    fprintf(stderr, "Error sintáctico en línea número: %d\n", yylineno);
-    error_count++;
+extern int yylineno;
+extern int yylex();
+int yyparse();
+
+int errors = 0;
+
+void yyerror(const char *s) {
+    printf("Error sintáctico en la línea: %d\n", yylineno);
+    errors++;
 }
 %}
 
@@ -146,10 +150,17 @@ for_init:
 
 %%
 
-int main(void) {
+int main(int argc, char **argv) {
+    if (argc > 1) {
+        if (!freopen(argv[1], "r", stdin)) {
+            perror(argv[1]);
+            return 1;
+        }
+    }
     printf("Prueba con el archivo de entrada\n");
-    if (yyparse() == 0 && error_count == 0) {
-        printf("Bien.\n");
+    yyparse();
+    if(errors == 0){
+        printf("Bien\n");
     }
     return 0;
 }
