@@ -18,7 +18,7 @@ Requisitos del Sistema
 ### Instalación y Ejecución del programa
 
   1.	Guarde los archivos adjuntos del código del programa.
-  2.	En la terminal, navegue al directorio donde se encuentra el archivo y ejecute el siguiente comando para generar el código fuente C y los archivos de definición de tokens desde tu archivo .y:
+  2.	En la terminal, navegue al directorio donde se encuentra el archivo y ejecute el siguiente comando para generar el código fuente C y los archivos de definición de tokens desde archivo .y:
 
   `bison -d LAB02_Arteaga_Cardona_Dominguez_Pinerda.y`
 
@@ -27,10 +27,12 @@ Requisitos del Sistema
   `flex LAB02_Arteaga_Cardona_Dominguez_Pinerda.l`
 
   4.	Una vez que tienes los archivos de código fuente de Bison y Lex, compílalos juntos para crear el ejecutable final. Utiliza el siguiente comando para enlazar todo y crear el ejecutable:
+   
    `gcc -o LAB02_Arteaga_Cardona_Dominguez_Pinerda LAB02_Arteaga_Cardona_Dominguez_Pinerda.tab.c lex.yy.c`
 
   5.	Ejecute el programa, debe añadir el archivo de entrada que se desea analizar como mostramos a continuación:
-     ./LAB02_Arteaga_Cardona_Dominguez_Pinerda entrada.txt > salida.txt`
+     
+     `./LAB02_Arteaga_Cardona_Dominguez_Pinerda entrada.txt > salida.txt`
 
 ## Funcionalidades del Programa
 
