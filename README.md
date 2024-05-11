@@ -24,15 +24,15 @@ Requisitos del Sistema
 
   3.	Compile el archivo Flex para generar el código fuente C correspondiente: (en caso de que no esté compilado en su directorio):
 
-  `flex LAB02_Arteaga_Cardona_Dominguez_Pinerda.l`
+  `flex LAB02_Arteaga_Cardona_Dominguez_Pineda.l`
 
   4.	Una vez que tienes los archivos de código fuente de Bison y Lex, compílalos juntos para crear el ejecutable final. Utiliza el siguiente comando para enlazar todo y crear el ejecutable:
    
-   ` gcc -o LAB02_Arteaga_Cardona_Dominguez_Pinerda LAB02_Arteaga_Cardona_Dominguez_Pinerda.tab.c lex.yy.c `
+   ` gcc -o LAB02_Arteaga_Cardona_Dominguez_Pineda LAB02_Arteaga_Cardona_Dominguez_Pineda.tab.c lex.yy.c `
 
   5.	Ejecute el programa, debe añadir el archivo de entrada que se desea analizar como mostramos a continuación:
      
-     ./LAB02_Arteaga_Cardona_Dominguez_Pinerda entrada.txt > salida.txt
+     ./LAB02_Arteaga_Cardona_Dominguez_Pineda entrada.txt > salida.txt
 
 ## Funcionalidades del Programa
 
