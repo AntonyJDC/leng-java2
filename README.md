@@ -20,7 +20,7 @@ Requisitos del Sistema
   1.	Guarde los archivos adjuntos del código del programa.
   2.	En la terminal, navegue al directorio donde se encuentra el archivo y ejecute el siguiente comando para generar el código fuente C y los archivos de definición de tokens desde archivo .y:
 
-  `bison -d LAB02_Arteaga_Cardona_Dominguez_Pinerda.y`
+  `bison -d LAB02_Arteaga_Cardona_Dominguez_Pineda.y`
 
   3.	Compile el archivo Flex para generar el código fuente C correspondiente: (en caso de que no esté compilado en su directorio):
 
